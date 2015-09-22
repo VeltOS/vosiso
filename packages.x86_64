@@ -1,10 +1,10 @@
-wicd
 yaourt
 xf86-video-vesa
 xorg
 xorg-xinit
 lightdm-gtk-greeter
 budgie-desktop
+wicd-gtk
 gnome-control-center
 gnome-terminal
 gnome-calculator
@@ -13,3 +13,7 @@ cheese
 leafpad
 libreoffice
 totem
+vivaldi
+numix-icon-theme-git
+numix-circle-icon-theme-git
+numix-themes-git
