@@ -1,11 +1,9 @@
 yaourt
 xf86-video-vesa
 xorg
-xorg-xinit
-lightdm-gtk-greeter
-budgie-desktop
-wicd-gtk
-gnome-control-center
+vos-greeter
+vos-desktop
+vos-networkmanager
 gnome-terminal
 gnome-calculator
 nautilus
@@ -14,6 +12,3 @@ leafpad
 libreoffice
 totem
 vivaldi
-numix-icon-theme-git
-numix-circle-icon-theme-git
-numix-themes-git
