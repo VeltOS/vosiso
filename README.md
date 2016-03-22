@@ -1,19 +1,17 @@
-# veltos-iso
+vosiso
+==========
+
 The VeltOS Live ISO config and build script, based on the ArchISO releng profile.
 
-# Creating the local package repository
-This repository contains everything needed to build the ISO except for some dependent packages, which are located in a local package repository. Since the Arch ISO can only be built as x64_64, this local package repo only needs the x64_86 versions of packages. To build the ISO, create a local package repository named "veltrepo" and set the Server path of "veltrepo" in pacman.conf to point to your repo.
+Building
+--------
 
-Currently, the package repository contains the following packages, unmodified from the Arch AUR:
-package-query    (1.6.2-1-x86_64)
-yaourt           (1.6.1-any)
-budgie-desktop   (8.8-2-x86_64)
+This repository contains everything needed to build the ISO except for some dependent packages, which are located in the vosrepo.velt.io/x86_64 repository. Since VeltOS can only be built as x64_64, our repository only has the x64_86 versions of packages.
 
-In the future, the repository will contain custom or modified packages. The source for these will be in other git repositories under this GitHub account, and you must download the releases and add them to the package repository.
+To build the ISO,
 
-The current version of the package repository (with all the compiled packages) will be included with each release of veltos-iso.
+1) Add vosrepo.velt.io/x86_64 to your pacman repositories, and you'll also need to locally sign our GPG key (E3BB5484, owned by Aidan Shafran <zelbrium@gmail.com>) using pacman-key.
 
-# Building
-1) Properly configure the package repository and the pacman.conf as described above.
 2) Make sure that root owns all of the airootfs directory.
-3) cd to the veltos-iso folder and run "sudo ./build.sh". The final ISO will be located in ./out/
+
+3) cd to the veltos-iso folder and make a directory named "out". Then, run "sudo ./build.sh". The final ISO will be located in ./out/
