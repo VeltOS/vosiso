@@ -10,7 +10,7 @@ This repository contains everything needed to build the ISO except for some depe
 
 To build the ISO,
 
-1) Add vosrepo.velt.io/x86_64 to your pacman repositories, and you'll also need to locally sign our GPG key (E3BB5484, owned by Aidan Shafran <zelbrium@gmail.com>) using pacman-key.
+1) Add http://repo.velt.io/x86_64 to your pacman repositories, and you'll also need to locally sign our GPG key (1BCE8B257234A9DA2A733339C876A8F2E3BB5484, owned by Aidan Shafran <zelbrium@gmail.com>) using pacman-key.
 
 2) Make sure that root owns all of the airootfs directory.
 

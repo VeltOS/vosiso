@@ -1,3 +1,8 @@
-View this installation guide online at
+Use a disk partitioning tool, such as gdisk, to create an
+installation partition and an EFI System Partition (if one
+does not already exist). Then use vos-install-gui to
+install VeltOS.
+
+View standard Arch Linux installation guide online at
 https://wiki.archlinux.org/index.php/Installation_Guide
 

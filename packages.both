@@ -13,6 +13,7 @@ dnsutils
 dosfstools
 elinks
 ethtool
+exfat-utils
 f2fs-tools
 fsarchiver
 gnu-netcat
@@ -26,8 +27,10 @@ ipw2200-fw
 irssi
 lftp
 linux-atm
+lsscsi
 mc
 mtools
+ndisc6
 nfs-utils
 nilfs-utils
 nmap
@@ -45,6 +48,8 @@ refind-efi
 rfkill
 rp-pppoe
 rsync
+sdparm
+sg3_utils
 smartmontools
 speedtouch
 sudo

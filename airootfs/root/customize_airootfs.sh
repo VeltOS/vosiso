@@ -12,9 +12,11 @@ cp -aT /etc/skel/ /root/
 chmod 700 /root
 
 # Create live user
-groupadd -r autologin
-useradd -m -p "" -g users -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel,autologin" -s /bin/bash veltlive
-echo "veltlive ALL=(ALL:ALL) ALL" >> /etc/sudoers
+groupadd -rf autologin
+! id veltlive && useradd -m -p "" -g users -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel,autologin" -s /bin/bash veltlive
+if ! grep -q "veltlive" /etc/sudoers ; then
+	echo "veltlive ALL=(ALL:ALL) ALL" >> /etc/sudoers
+fi
 #
 
 sed -i 's/#\(PermitRootLogin \).\+/\1yes/' /etc/ssh/sshd_config
@@ -28,19 +30,17 @@ sed -i 's/#\(HandleLidSwitch=\)suspend/\1ignore/' /etc/systemd/logind.conf
 systemctl enable pacman-init.service choose-mirror.service
 systemctl set-default graphical.target
 
-systemctl enable wicd
+#
+systemctl enable NetworkManager
 systemctl enable lightdm
 
-glib-compile-schemas /usr/share/glib-2.0/schemas/
-
 # Don't want this stuff cluttering the Launcher
-rm /usr/share/applications/bssh.desktop
-rm /usr/share/applications/bvnc.desktop
-rm /usr/share/applications/avahi-discover.desktop
-rm /usr/share/applications/qv4l2.desktop
-rm /usr/share/applications/gcm-viewer.desktop
-rm /usr/share/applications/nm-connection-editor.desktop
-rm /usr/share/applications/zenmap.desktop
-rm /usr/share/applications/zenmap-root.desktop
-rm /usr/share/applications/elinks.desktop
+rm /usr/share/applications/bssh.desktop || true
+rm /usr/share/applications/bvnc.desktop || true
+rm /usr/share/applications/avahi-discover.desktop || true
+rm /usr/share/applications/qv4l2.desktop || true
+rm /usr/share/applications/nm-connection-editor.desktop || true
+rm /usr/share/applications/zenmap.desktop || true
+rm /usr/share/applications/zenmap-root.desktop || true
+rm /usr/share/applications/elinks.desktop || true
 
